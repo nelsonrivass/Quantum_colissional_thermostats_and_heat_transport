@@ -1,14 +1,30 @@
-Hi!
-This is the python code I wrote for my master's degree final project
+# Master's Degree Final Project Code
 
-On `/Qubit` you'll find several `.py` files.  The goal is to perform the termalization of a single 1/2-spin (qubit) through its bombardment with 1/2-spin units coming from a thermal reservoir. The scattering formalism is fully explained on the article: [Jorge Tabanera et al 2022 New J. Phys. 24 023018](https://iopscience.iop.org/article/10.1088/1367-2630/ac4923)
+This repository contains the Python code for my master's degree final project, organized into two main folders:
 
-- `qubits_plots.py`: most of the `.py` files create `.txt` with the results of the simulations. This file plot those .txt.
-- `qubit.ritmos.py`: calculation of the transition probabilities for the three methods: exact, wave-vector-operator model (WvO) and random interaction time model (RIT).
-- `distribucion.py`: plots the effusion distribution of the units coming from the resevoirs at different temperatures
-- `qubit_termalization_kraus`: termalization process perfomed through Kraus operators (CPTP map)
-- `qubit_termalization_nokraus`: termalization process without Kraus operators. It only takes into account the evolution of the diagonal terms of the density matrix.
-- `qubit_termalization_nokraus_full`: the same file as before but it includes the exact method. This method is quite unstable at low energies due to the several inverse matrices needed. I do not recommned using my code to do this.
-- 'qubit_termalization_nokraus_prom`: we now leave behind the sthocastic process and we perform a weighted average of the transition probabilities using the effusion distribution and bombard the system with this 'averaged' units.
+- **`/Qubit`**: Simulations of the thermalization of a single 1/2-spin (qubit) through repeated interactions with 1/2-spin units from a thermal reservoir. The scattering formalism is fully explained in [Jorge Tabanera et al. 2022, *New J. Phys.* 24 023018](https://iopscience.iop.org/article/10.1088/1367-2630/ac4923).
+- **`/Cadenas`**: Programs for simulating the thermalization and heat transport in 1/2-spin chains coupled to one or two thermal reservoirs at their ends.
 
-On `/Cadenas`
+## **Contents of `/Qubit`**
+
+Most scripts generate `.txt` files with simulation results, which can be visualized using the plotting scripts.
+
+- **`qubits_plots.py`**: Plots the simulation results from the generated `.txt` files.
+- **`qubit_ritmos.py`**: Computes transition probabilities using three methods:  
+  - Exact method  
+  - Wave-vector-operator model (WvO)  
+  - Random interaction time model (RIT)  
+  These probabilities are also calculated in the `_termalization_` scripts.
+- **`distribucion.py`**: Plots the effusion distribution of reservoir units at different temperatures.
+- **`qubit_termalization_kraus.py`**: Simulates the thermalization process using Kraus operators (CPTP maps).
+- **`qubit_termalization_nokraus.py`**: Simulates thermalization without Kraus operators, considering only the evolution of the diagonal terms of the density matrix.
+- **`qubit_termalization_nokraus_full.py`**: Extends the previous approach by including the exact method. However, this method is unstable at low energies due to the use of multiple inverse matrices. **Not recommended** for low-energy simulations.
+- **`qubit_termalization_nokraus_prom.py`**: Instead of using a stochastic approach, this script computes a weighted average of the transition probabilities based on the effusion distribution and simulates bombardment with these averaged units.
+
+## **Contents of `/Cadenas`**
+
+This folder contains scripts for simulating the thermalization and heat transport in 1/2-spin chains coupled to one or two thermal reservoirs at their extremities.
+
+- **`cadena_plot.py`**: Plots the simulation results.
+- **`cadena1_termalization.py`**: Simulates a spin chain where the outermost spin on the left is bombarded with units from a thermal bath at temperature **T**.
+- **`cadena2_termalization.py`**: Simulates a spin chain where the outermost spins on both ends are bombarded with units from thermal baths at temperatures **T₁** and **T₂**, respectively.
