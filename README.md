@@ -18,12 +18,12 @@ Most scripts generate `.txt` files with simulation results, which can be visuali
 - **`distribucion.py`**: Plots the effusion distribution of reservoir units at different temperatures.
 - **`qubit_termalization_kraus.py`**: Simulates the thermalization process using Kraus operators (CPTP maps).
 - **`qubit_termalization_nokraus.py`**: Simulates thermalization without Kraus operators, considering only the evolution of the diagonal terms of the density matrix.
-- **`qubit_termalization_nokraus_full.py`**: Extends the previous approach by including the exact method. However, this method is unstable at low energies due to the use of multiple inverse matrices. **Not recommended** for low-energy simulations.
+- **`qubit_termalization_nokraus_full.py`**: Extends the previous approach by including the exact method. However, this method is unstable at low energies due to the use of multiple inverse matrices. **I do not recommend** to use my implementation.
 - **`qubit_termalization_nokraus_prom.py`**: Instead of using a stochastic approach, this script computes a weighted average of the transition probabilities based on the effusion distribution and simulates bombardment with these averaged units.
 
 ## **Contents of `/Cadenas`**
 
-This folder contains scripts for simulating the thermalization and heat transport in 1/2-spin chains coupled to one or two thermal reservoirs at their extremities.
+This folder contains scripts for simulating the thermalization and heat transport in 1/2-spin chains coupled to one or two thermal reservoirs at their extremities. We only use the weighted average approch from now on.
 
 - **`cadena_plot.py`**: Plots the simulation results.
 - **`cadena1_termalization.py`**: Simulates a spin chain where the outermost spin on the left is bombarded with units from a thermal bath at temperature **T**.
